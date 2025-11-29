@@ -1,1 +1,48 @@
-body { background-color: lightgray; }
+* {
+    margin: 10px;
+    padding: 0px;
+    box-sizing: border-box;
+    background-color: #231F25;
+}
+
+header {
+  text-align: center;
+  padding: 10px;
+  color: #FAF9FA;
+}
+
+.input-area{
+    padding: 10px;
+    text-align: center;
+    color: #FAF9FA;
+}
+
+.input-area textarea{
+    padding: 10px;
+    width: 50%;
+    height: 70px;
+    margin: 0 auto 15px auto;
+    border-radius: 10px;
+
+    resize: none;
+
+    display: block;
+    color: #FAF9FA;
+    
+}
+
+.input-area button{
+    padding: 10px;
+    background-color: #9892A3; 
+    color: #FAF9FA;
+    display: block;
+    margin: 0 auto;
+    border: none; 
+    border-radius: 20px;
+}
+
+.response-area{
+    padding: 10px;
+    text-align: center; 
+    color: #FAF9FA;
+}
