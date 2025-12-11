@@ -1,19 +1,22 @@
 const express = require('express');
-const path = require('path'); // Modul nativ Node pentru a lucra cu căi de fișiere
-const app = express();
-const PORT = 3000;
+const path = require('path');
 
-// 1. Setăm folderul 'public' ca folder static
-// Folosim path.join pentru a fi siguri că găsește folderul indiferent de unde rulăm comanda
+
+const apiRoutes = require('./src/routes/api');
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+app.use(express.json());
+
 app.use(express.static(path.join(__dirname, 'public')));
 
-// 2. Rută de rezervă (Opțional, dar recomandat)
-// Dacă cineva intră pe o pagină care nu există, îl trimitem înapoi la index.html
-app.get(/.*/, (req, res) => {   // <--- Observă că nu mai sunt ghilimele, ci slash-uri /
+app.use('/api', apiRoutes);
+
+app.get(/.*/, (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// 3. Pornim serverul
 app.listen(PORT, () => {
-    console.log('Serverul tău rulează la http://localhost:3000');
-});
+    console.log("Serverul este pornit la http://localhost:", PORT);
+})
