@@ -42,7 +42,18 @@ header {
 }
 
 .response-area{
-    padding: 10px;
-    text-align: center; 
+    
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto; 
+    
+    text-align: left;
+    padding: 20px;
     color: #FAF9FA;
+    background-color: #2A262C;
+    border-radius: 15px;
+    
+    
+    white-space: pre-wrap;
+    font-family: monospace;
 }

@@ -1,11 +1,15 @@
+const aiRepository = require('../repositories/aiRepository');
+
 class generateService{
     async generateCode(promptUtilizator){
 
         console.log("generateService primit promptul utilizatorului: " + promptUtilizator);
 
-        const raspSimulare = "Codul generat de modelul ai";
+        const promptFinal = promptUtilizator;
 
-        return raspSimulare;
+        const rezultatModel = await aiRepository.comunicateWithModel(promptFinal);
+
+        return rezultatModel;
     }
 }
 
